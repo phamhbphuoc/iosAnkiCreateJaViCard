@@ -19,6 +19,8 @@ def call_search_api(session, query, type, dict="javi", page=1, limit=1):
         "limit": limit
     }
 
-    res = session.post(SEARCH_URL, headers=headers, json=payload, verify=False)
+    res = session.post(SEARCH_URL, headers=headers,
+                       json=payload,
+                       verify=True,)
 
     return res.json()

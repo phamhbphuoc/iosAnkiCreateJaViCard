@@ -10,26 +10,28 @@ def make_url_scheme(word_payload: Word, deck: str) -> str:
     am_han_viet_list = word_payload.get("am_han_viet_list", [])
     examples = word_payload.get("examples", [])
 
-    am_han_viet_list_str = "\n".join(am_han_viet_list)
+    am_han_viet_list_str = "<br>".join(am_han_viet_list)
 
     examples_str_list = [
-        f"""{example.get("content", "")}\n{example.get("mean", "")}"""
+        f"""{example.get("content", "")}\n<br>\n{example.get("mean", "")}"""
         for example in examples
     ]
-    examples_str = "\n\n".join(examples_str_list)
+    examples_str = "\n<br><br>\n".join(examples_str_list)
 
-    front = word
+    deck = urllib.parse.quote(deck)
+
+    front = urllib.parse.quote(word)
 
     back = f"""
-    {phonetic}
-
-    [{am_han_viet_list_str}]
-
-    {mean}
-    
-    {examples_str}
-    """.strip()
+{phonetic}
+<br><br>
+[{am_han_viet_list_str}]
+<br><br>
+{mean}
+{f"<br><br>" if examples_str else ""}
+{examples_str}
+""".strip()
+    back = urllib.parse.quote(back)
 
     url_scheme = f"anki://x-callback-url/addnote?profile=User%201&type=Basic&deck={deck}&fldFront={front}&fldBack={back}"
-    url_scheme = urllib.parse.quote(url_scheme)
     return url_scheme

@@ -16,7 +16,7 @@ def get_nghia_han_viet(filtered_result):
 
 def fetch_and_process_kanji(session, query):
 
-    res = call_search_api(session, query, type="kanji")
+    res = call_search_api(session, query, type="kanji", limit=100)
     results = get_results(res)
 
     am_han_viet_list = [get_am_han_viet(result) for result in results]

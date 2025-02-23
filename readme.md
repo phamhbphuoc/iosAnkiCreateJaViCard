@@ -79,8 +79,21 @@ If user opens this url on an iPhone or iPad, a new card will be created in deck 
 This is an example Pythonista URL Scheme to run this script from Pythonista
 
 ```
-pythonista3://icloud/iosAnkiCreateJaViCard/main?action=run&args=勉強%20N1
+pythonista3://icloud/iosAnkiCreateJaViCard/main?action=run&args=https://mazii.net/vi-VN/search/word/javi/勉強%20N1
 ```
 
 ## iOS Shortcuts Example
 https://www.icloud.com/shortcuts/f55a3b3d2e0344a09509dc862188fc8c
+
+## Extra step on Pythonista
+
+Needs to install ```certifi``` package to call Python ```requests``` without error
+
+- First install ```statsh``` on Pythonista (Ref: https://note.com/junyaaa/n/n1b6861038047#cITTZ)
+  - Paste and enter following code in Pythonista console
+    - ```import requests as r; exec(r.get('http://bit.ly/get-stash').text)```
+  - Kill Pythonista from the background, and reopen it
+  - Locate ```launch_stash.py``` script in Pythonista local root folder, and run it
+- With ```statsh``` running, install ```certifi``` with pip
+  - ```pip install stash```
+

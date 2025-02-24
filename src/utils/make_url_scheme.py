@@ -13,7 +13,7 @@ def make_url_scheme(word_payload: Word, deck: str) -> str:
     am_han_viet_list_str = "<br>".join(am_han_viet_list)
 
     examples_str_list = [
-        f"""{example.get("content", "")}\n<br>\n{example.get("mean", "")}"""
+        f"""{example.get("furigana_sentence", "")}\n<br>\n{example.get("mean", "")}"""
         for example in examples
     ]
     examples_str = "\n<br><br>\n".join(examples_str_list)

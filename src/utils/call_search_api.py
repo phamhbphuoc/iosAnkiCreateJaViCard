@@ -1,7 +1,7 @@
 from src.constants.urls import SEARCH_URL
 
 
-def call_search_api(session, query, type, dict="javi", page=1, limit=1):
+def call_search_api(session, query, type, dict="javi", page=1, limit=0):
 
     headers = {
         "Accept": "application/json, text/plain, */*",

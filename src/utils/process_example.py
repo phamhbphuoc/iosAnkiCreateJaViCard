@@ -41,6 +41,6 @@ def parse_kanji_kana_sentence(kanji_sentence, kana_sentence):
 
 def fetch_and_parse_examples(session, query):
 
-    res = call_search_api(session, query, type="example")
+    res = call_search_api(session, query, type="example", limit=5)
     results = get_results(res)
     return results

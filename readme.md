@@ -83,7 +83,7 @@ pythonista3://icloud/iosAnkiCreateJaViCard/main?action=run&args=https://mazii.ne
 ```
 
 ## iOS Shortcuts Example
-https://www.icloud.com/shortcuts/f55a3b3d2e0344a09509dc862188fc8c
+https://www.icloud.com/shortcuts/188502bb43ef45f48766808d779d193e
 
 ## Extra step on Pythonista
 
